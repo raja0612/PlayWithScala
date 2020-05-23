@@ -28,6 +28,8 @@ POST  /recursiveReads    controllers.PlaceJsonController.recursiveReads()
 
 POST  /formatPerson      controllers.PlaceJsonController.readAndWritePerson()
 
+POST  /automated/dogReads      controllers.AutomatedDogMappingController.readDog()
+
 
 
 # Map static resources from the /public folder to the /assets URL path
