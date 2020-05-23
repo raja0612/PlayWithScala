@@ -1,0 +1,34 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+
+
+
+GET     /hello/:module                 controllers.HelloWorldController.hello(module: String)
+GET     /hello/view/:module            controllers.HelloWorldController.helloView(module: String)
+
+
+
+
+## BookStore Play JSON Controller
+GET   /books/:isbn  controllers.BookStoreController.getBook(isbn: String)
+GET   /books        controllers.BookStoreController.getBooks()
+POST  /books        controllers.BookStoreController.addBook()
+
+POST  /readPlace         controllers.PlaceJsonController.readPlace()
+
+GET   /writePlace        controllers.PlaceJsonController.writePlace()
+
+POST  /recursiveReads    controllers.PlaceJsonController.recursiveReads()
+
+POST  /formatPerson      controllers.PlaceJsonController.readAndWritePerson()
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
